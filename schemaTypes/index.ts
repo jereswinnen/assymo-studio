@@ -1,1 +1,3 @@
-export const schemaTypes = []
+import {pageType} from './pageType'
+
+export const schemaTypes = [pageType]
