@@ -17,6 +17,16 @@ export const pageType = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: 'headerImage',
+      type: 'image',
+      fields: [
+        defineField({
+          name: 'alt',
+          type: 'string',
+        }),
+      ],
+    }),
+    defineField({
       name: 'body',
       type: 'array',
       of: [{type: 'block'}],
