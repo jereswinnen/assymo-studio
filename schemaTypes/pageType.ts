@@ -2,11 +2,11 @@ import {defineField, defineType} from 'sanity'
 
 export const pageType = defineType({
   name: 'page',
-  title: 'Pagina',
+  title: 'Page',
   type: 'document',
   fields: [
     defineField({
-      name: 'Titel',
+      name: 'title',
       type: 'string',
       validation: (rule) => rule.required(),
     }),
@@ -17,7 +17,7 @@ export const pageType = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'Hoofdafbeelding',
+      name: 'headerImage',
       type: 'image',
       fields: [
         defineField({
@@ -27,7 +27,7 @@ export const pageType = defineType({
       ],
     }),
     defineField({
-      name: 'Tekst',
+      name: 'body',
       type: 'array',
       of: [{type: 'block'}],
     }),

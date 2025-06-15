@@ -2,11 +2,11 @@ import {defineField, defineType} from 'sanity'
 
 export const productType = defineType({
   name: 'product',
-  title: 'Producten',
+  title: 'Products',
   type: 'document',
   fields: [
     defineField({
-      name: 'Naam',
+      name: 'name',
       type: 'string',
       validation: (rule) => rule.required(),
     }),
@@ -17,7 +17,7 @@ export const productType = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'Hoofdafbeelding',
+      name: 'headerImage',
       type: 'image',
       fields: [
         defineField({
@@ -27,7 +27,7 @@ export const productType = defineType({
       ],
     }),
     defineField({
-      name: 'Tekst',
+      name: 'body',
       type: 'array',
       of: [{type: 'block'}],
     }),

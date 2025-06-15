@@ -2,7 +2,7 @@ import {defineField, defineType} from 'sanity'
 
 export const navigationType = defineType({
   name: 'navigation',
-  title: 'Navigatie',
+  title: 'Navigation',
   type: 'document',
   fields: [
     defineField({
@@ -12,12 +12,12 @@ export const navigationType = defineType({
       of: [
         {
           name: 'navLink',
-          title: 'Navighatielink',
+          title: 'Nav Link',
           type: 'object',
           fields: [
             defineField({
               name: 'title',
-              title: 'Naam',
+              title: 'Title',
               type: 'string',
               validation: (rule) => rule.required(),
             }),
