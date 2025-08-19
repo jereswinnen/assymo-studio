@@ -28,8 +28,22 @@ export const productType = defineType({
     }),
     defineField({
       name: 'body',
+      title: 'Legacy Body Content',
       type: 'array',
       of: [{type: 'block'}],
+      description: 'Old content - migrate to sections when possible',
+      hidden: true,
+    }),
+    defineField({
+      name: 'sections',
+      title: 'Page Sections',
+      type: 'array',
+      of: [
+        {type: 'textLeftImageRight'},
+        {type: 'textRightImageLeft'},
+        {type: 'textCentered'},
+        {type: 'kaart'},
+      ],
     }),
   ],
 })
