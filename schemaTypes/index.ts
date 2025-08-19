@@ -4,6 +4,7 @@ import {productType} from './productType'
 
 import {textLeftImageRightType} from './blocks/textLeftImageRight'
 import {textRightImageLeftType} from './blocks/textRightImageLeft'
+import {textCenteredType} from './blocks/textCentered'
 import {kaartType} from './blocks/mapType'
 
 export const schemaTypes = [
@@ -12,5 +13,6 @@ export const schemaTypes = [
   productType,
   textLeftImageRightType,
   textRightImageLeftType,
+  textCenteredType,
   kaartType,
 ]

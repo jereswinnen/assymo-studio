@@ -41,6 +41,7 @@ export const pageType = defineType({
       of: [
         {type: 'textLeftImageRight'},
         {type: 'textRightImageLeft'},
+        {type: 'textCentered'},
         {type: 'kaart'},
       ],
     }),
