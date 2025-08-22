@@ -9,6 +9,7 @@ import {kaartType} from './blocks/mapType'
 import {slideshowType} from './blocks/slideshow'
 import {slideshowLeftTextRightType} from './blocks/slideshowLeftTextRight'
 import {slideshowRightTextLeftType} from './blocks/slideshowRightTextLeft'
+import {productGridType} from './blocks/productGrid'
 
 export const schemaTypes = [
   pageType,
@@ -21,4 +22,5 @@ export const schemaTypes = [
   slideshowType,
   slideshowLeftTextRightType,
   slideshowRightTextLeftType,
+  productGridType,
 ]

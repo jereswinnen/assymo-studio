@@ -46,6 +46,7 @@ export const productType = defineType({
         {type: 'slideshow'},
         {type: 'slideshowLeftTextRight'},
         {type: 'slideshowRightTextLeft'},
+        {type: 'productGrid'},
       ],
     }),
   ],
