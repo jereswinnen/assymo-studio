@@ -10,6 +10,8 @@ import {slideshowType} from './blocks/slideshow'
 import {slideshowLeftTextRightType} from './blocks/slideshowLeftTextRight'
 import {slideshowRightTextLeftType} from './blocks/slideshowRightTextLeft'
 import {productGridType} from './blocks/productGrid'
+import {textLeftImageGridRightType} from './blocks/textLeftImageGridRight'
+import {textRightImageGridLeftType} from './blocks/textRightImageGridLeft'
 
 export const schemaTypes = [
   pageType,
@@ -23,4 +25,6 @@ export const schemaTypes = [
   slideshowLeftTextRightType,
   slideshowRightTextLeftType,
   productGridType,
+  textLeftImageGridRightType,
+  textRightImageGridLeftType,
 ]

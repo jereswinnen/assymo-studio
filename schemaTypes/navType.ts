@@ -2,7 +2,7 @@ import {defineField, defineType} from 'sanity'
 
 export const navigationType = defineType({
   name: 'navigation',
-  title: 'Navigation',
+  title: 'Navigatie',
   type: 'document',
   fields: [
     defineField({
@@ -17,20 +17,43 @@ export const navigationType = defineType({
           fields: [
             defineField({
               name: 'title',
-              title: 'Title',
+              title: 'Titel',
               type: 'string',
               validation: (rule) => rule.required(),
             }),
             defineField({
               name: 'slug',
-              title: 'Slug',
+              title: 'URL (stukje achter domeinnaam)',
               type: 'string',
-              description: 'Slug of the page (e.g. "about", "contact", "home")',
               validation: (rule) => rule.required(),
             }),
           ],
+          preview: {
+            select: {
+              title: 'title',
+              slug: 'slug',
+            },
+            prepare({title, slug}) {
+              return {
+                title: title || '(untitled)',
+                subtitle: slug ? `/${slug}` : '',
+              }
+            },
+          },
         },
       ],
     }),
   ],
+  preview: {
+    select: {
+      links: 'links',
+    },
+    prepare({links}) {
+      const count = Array.isArray(links) ? links.length : 0
+      return {
+        title: 'Navigatie',
+        subtitle: `${count} link${count === 1 ? '' : 's'}`,
+      }
+    },
+  },
 })

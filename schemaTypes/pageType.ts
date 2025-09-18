@@ -47,6 +47,8 @@ export const pageType = defineType({
         {type: 'slideshowLeftTextRight'},
         {type: 'slideshowRightTextLeft'},
         {type: 'productGrid'},
+        {type: 'textLeftImageGridRight'},
+        {type: 'textRightImageGridLeft'},
       ],
     }),
   ],
