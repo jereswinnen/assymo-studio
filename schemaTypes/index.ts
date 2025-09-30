@@ -6,6 +6,7 @@ import {textLeftImageRightType} from './blocks/textLeftImageRight'
 import {textRightImageLeftType} from './blocks/textRightImageLeft'
 import {textCenteredType} from './blocks/textCentered'
 import {kaartType} from './blocks/mapType'
+import {kalenderType} from './blocks/calendarType'
 import {slideshowType} from './blocks/slideshow'
 import {slideshowLeftTextRightType} from './blocks/slideshowLeftTextRight'
 import {slideshowRightTextLeftType} from './blocks/slideshowRightTextLeft'
@@ -21,6 +22,7 @@ export const schemaTypes = [
   textRightImageLeftType,
   textCenteredType,
   kaartType,
+  kalenderType,
   slideshowType,
   slideshowLeftTextRightType,
   slideshowRightTextLeftType,

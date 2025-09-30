@@ -43,6 +43,7 @@ export const productType = defineType({
         {type: 'textRightImageLeft'},
         {type: 'textCentered'},
         {type: 'kaart'},
+        {type: 'kalender'},
         {type: 'slideshow'},
         {type: 'slideshowLeftTextRight'},
         {type: 'slideshowRightTextLeft'},
