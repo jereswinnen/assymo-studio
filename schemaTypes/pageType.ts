@@ -44,6 +44,7 @@ export const pageType = defineType({
         {type: 'textCentered'},
         {type: 'kaart'},
         {type: 'kalender'},
+        {type: 'contactForm'},
         {type: 'slideshow'},
         {type: 'slideshowLeftTextRight'},
         {type: 'slideshowRightTextLeft'},

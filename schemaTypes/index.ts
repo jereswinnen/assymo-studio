@@ -7,6 +7,7 @@ import {textRightImageLeftType} from './blocks/textRightImageLeft'
 import {textCenteredType} from './blocks/textCentered'
 import {kaartType} from './blocks/mapType'
 import {kalenderType} from './blocks/calendarType'
+import {contactFormType} from './blocks/contactForm'
 import {slideshowType} from './blocks/slideshow'
 import {slideshowLeftTextRightType} from './blocks/slideshowLeftTextRight'
 import {slideshowRightTextLeftType} from './blocks/slideshowRightTextLeft'
@@ -23,6 +24,7 @@ export const schemaTypes = [
   textCenteredType,
   kaartType,
   kalenderType,
+  contactFormType,
   slideshowType,
   slideshowLeftTextRightType,
   slideshowRightTextLeftType,
