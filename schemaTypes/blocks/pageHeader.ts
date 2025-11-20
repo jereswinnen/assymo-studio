@@ -1,0 +1,103 @@
+import {defineField, defineType} from 'sanity'
+
+export const pageHeaderType = defineType({
+  name: 'pageHeader',
+  title: 'Page Header',
+  type: 'object',
+  fields: [
+    defineField({
+      name: 'title',
+      title: 'Title',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'subtitle',
+      title: 'Subtitle',
+      type: 'text',
+      rows: 3,
+    }),
+    defineField({
+      name: 'showButtons',
+      title: 'Show Buttons',
+      type: 'boolean',
+      initialValue: true,
+    }),
+    defineField({
+      name: 'buttons',
+      title: 'Buttons',
+      type: 'array',
+      hidden: ({parent}) => !parent?.showButtons,
+      validation: (rule) => rule.max(2),
+      of: [
+        {
+          type: 'object',
+          fields: [
+            defineField({
+              name: 'label',
+              title: 'Label',
+              type: 'string',
+              validation: (rule) => rule.required(),
+            }),
+            defineField({
+              name: 'url',
+              title: 'URL',
+              type: 'url',
+              validation: (rule) =>
+                rule.uri({
+                  allowRelative: true,
+                  scheme: ['http', 'https', 'mailto', 'tel'],
+                }),
+            }),
+            defineField({
+              name: 'icon',
+              title: 'Icon',
+              type: 'string',
+              options: {
+                list: [
+                  {title: 'List', value: 'list'},
+                  {title: 'Calendar', value: 'calendar'},
+                  {title: 'Arrow', value: 'arrow'},
+                  {title: 'Phone', value: 'phone'},
+                  {title: 'Mail', value: 'mail'},
+                  {title: 'Info', value: 'info'},
+                  {title: 'Download', value: 'download'},
+                  {title: 'Chat', value: 'chat'},
+                ],
+              },
+            }),
+            defineField({
+              name: 'variant',
+              title: 'Variant',
+              type: 'string',
+              options: {
+                list: [
+                  {title: 'Primary', value: 'primary'},
+                  {title: 'Secondary', value: 'secondary'},
+                ],
+              },
+              initialValue: 'primary',
+            }),
+          ],
+          preview: {
+            select: {
+              title: 'label',
+              subtitle: 'variant',
+            },
+          },
+        },
+      ],
+    }),
+  ],
+  preview: {
+    select: {
+      title: 'title',
+    },
+    prepare({title}) {
+      return {
+        title: title || 'Page Header',
+        subtitle: 'Page Header',
+      }
+    },
+  },
+})

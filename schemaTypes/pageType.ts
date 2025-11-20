@@ -51,6 +51,7 @@ export const pageType = defineType({
         {type: 'productGrid'},
         {type: 'textLeftImageGridRight'},
         {type: 'textRightImageGridLeft'},
+        {type: 'pageHeader'},
       ],
     }),
   ],
