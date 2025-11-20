@@ -9,65 +9,56 @@ This is a Sanity Studio v4 project - a headless CMS for managing content. It ser
 ## Development Commands
 
 ```bash
-# Install dependencies (uses pnpm)
-pnpm install
-
-# Start development server
-pnpm dev
-
-# Build for production
-pnpm build
-
-# Deploy to Sanity hosting
-pnpm deploy
-
-# Deploy GraphQL API
-pnpm deploy-graphql
+pnpm install           # Install dependencies
+pnpm dev               # Start development server
+pnpm build             # Build for production
+pnpm deploy            # Deploy to Sanity hosting
+pnpm deploy-graphql    # Deploy GraphQL API
 ```
 
 ## Architecture
 
-### Content Schema Structure
+### Schema Organization
 
-The project defines three main content types in `schemaTypes/`:
+The project uses a **page builder pattern** with reusable section blocks.
 
-1. **Pages** (`pageType.ts`) - General page content with title, slug, header image, and body
-2. **Solutions** (`productType.ts`) - Product/solution content (exports as "solution" type)
-3. **Navigation** (`navType.ts`) - Site navigation structure
+**Document Types** (in `schemaTypes/`):
+- `pageType.ts` - Pages with title, slug, headerImage, and sections array
+- `productType.ts` - Solutions (type name: "solution") with same structure as pages
+- `navType.ts` - Site navigation structure
 
-All schemas are registered in `schemaTypes/index.ts` and imported into `sanity.config.ts`.
+**Section Blocks** (in `schemaTypes/blocks/`):
+Reusable object types that can be added to page/solution `sections` arrays:
+- Text/Image layouts: `textLeftImageRight`, `textRightImageLeft`, `textCentered`
+- Image grid variants: `textLeftImageGridRight`, `textRightImageGridLeft`
+- Slideshows: `slideshow`, `slideshowLeftTextRight`, `slideshowRightTextLeft`
+- Other: `productGrid`, `kaart` (map), `kalender` (calendar), `contactForm`
+
+Each block type has a `preview` configuration for Studio display.
+
+### Registration Flow
+
+All schemas are exported from `schemaTypes/index.ts` and registered in `sanity.config.ts`.
 
 ### Key Configuration
 
 - **Project ID**: `naj44gzh`
 - **Dataset**: `production`
-- **Studio Host**: `assymo`
-- **Plugins**: Structure Tool (content editing) and Vision Tool (GROQ query testing)
+- **Plugins**: structureTool, visionTool
 
 ### Code Style
 
-- TypeScript with strict mode
-- ESLint with Sanity Studio configuration
-- Prettier formatting: no semicolons, single quotes, 100 char line width
+- No semicolons, single quotes, 100 char line width (Prettier)
+- Use `defineType()` and `defineField()` helpers
+- Field names use camelCase (become API property names)
 
-## Common Tasks
+## Adding New Section Blocks
 
-### Adding New Content Types
+1. Create file in `schemaTypes/blocks/`
+2. Define as `type: 'object'` with fields and preview config
+3. Export from `schemaTypes/index.ts`
+4. Add to `sections` array in `pageType.ts` and `productType.ts`
 
-1. Create new schema file in `schemaTypes/` directory
-2. Export from `schemaTypes/index.ts`
-3. Schema will auto-register via the index export
+## Legacy Content
 
-### Modifying Schemas
-
-When changing schemas, remember:
-- Schema changes affect production data immediately in dev mode
-- Use migrations for breaking changes in production
-- Test schema changes thoroughly before deploying
-
-### Sanity-Specific Patterns
-
-- Use `defineType()` and `defineField()` helpers for type safety
-- Field names become API property names - use camelCase
-- The `slug` field type auto-generates from title fields
-- Image fields include built-in asset management
+Both page and solution types have a hidden `body` field marked as "Legacy Body Content" - this is deprecated in favor of the `sections` array.
