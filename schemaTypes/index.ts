@@ -1,6 +1,7 @@
 import {pageType} from './pageType'
 import {navigationType} from './navType'
 import {productType} from './productType'
+import {siteParametersType} from './parametersType'
 
 import {textLeftImageRightType} from './blocks/textLeftImageRight'
 import {textRightImageLeftType} from './blocks/textRightImageLeft'
@@ -20,6 +21,7 @@ export const schemaTypes = [
   pageType,
   navigationType,
   productType,
+  siteParametersType,
   textLeftImageRightType,
   textRightImageLeftType,
   textCenteredType,

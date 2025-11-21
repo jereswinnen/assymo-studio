@@ -27,6 +27,18 @@ export const navigationType = defineType({
               type: 'string',
               validation: (rule) => rule.required(),
             }),
+            defineField({
+              name: 'submenuHeading',
+              title: 'Submenu Koptekst',
+              type: 'string',
+              description: 'Bijv. "Ontdek"',
+            }),
+            defineField({
+              name: 'subItems',
+              title: 'Submenu Items',
+              type: 'array',
+              of: [{type: 'reference', to: [{type: 'solution'}]}],
+            }),
           ],
           preview: {
             select: {
