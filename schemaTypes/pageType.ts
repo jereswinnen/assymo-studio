@@ -52,6 +52,7 @@ export const pageType = defineType({
         {type: 'textLeftImageGridRight'},
         {type: 'textRightImageGridLeft'},
         {type: 'pageHeader'},
+        {type: 'splitSection'},
       ],
     }),
   ],
