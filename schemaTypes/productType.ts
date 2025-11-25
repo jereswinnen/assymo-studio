@@ -53,6 +53,7 @@ export const productType = defineType({
         {type: 'textRightImageGridLeft'},
         {type: 'pageHeader'},
         {type: 'splitSection'},
+        {type: 'uspSection'},
       ],
     }),
   ],

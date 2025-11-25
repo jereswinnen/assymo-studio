@@ -1,4 +1,5 @@
 import {defineField, defineType} from 'sanity'
+import {iconOptions} from '../shared/icons'
 
 export const splitSectionType = defineType({
   name: 'splitSection',
@@ -71,17 +72,7 @@ export const splitSectionType = defineType({
                   title: 'Icon',
                   type: 'string',
                   options: {
-                    list: [
-                      {title: 'List', value: 'list'},
-                      {title: 'Calendar', value: 'calendar'},
-                      {title: 'Arrow', value: 'arrow'},
-                      {title: 'Phone', value: 'phone'},
-                      {title: 'Mail', value: 'mail'},
-                      {title: 'Info', value: 'info'},
-                      {title: 'Download', value: 'download'},
-                      {title: 'Chat', value: 'chat'},
-                      {title: 'Eye', value: 'eye'},
-                    ],
+                    list: iconOptions,
                   },
                 }),
                 defineField({

@@ -51,6 +51,11 @@ All schemas are exported from `schemaTypes/index.ts` and registered in `sanity.c
 - No semicolons, single quotes, 100 char line width (Prettier)
 - Use `defineType()` and `defineField()` helpers
 - Field names use camelCase (become API property names)
+- **Field titles must be in Dutch** (e.g., `title: 'Sectie Titel'`, `title: 'Toon Link'`)
+
+### Shared Resources
+
+- **Icons**: Import `iconOptions` from `../shared/icons` for icon dropdowns. Add new icons there to make them available across all blocks.
 
 ## Adding New Section Blocks
 

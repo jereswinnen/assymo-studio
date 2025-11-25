@@ -17,6 +17,7 @@ import {textLeftImageGridRightType} from './blocks/textLeftImageGridRight'
 import {textRightImageGridLeftType} from './blocks/textRightImageGridLeft'
 import {pageHeaderType} from './blocks/pageHeader'
 import {splitSectionType} from './blocks/splitSection'
+import {uspSectionType} from './blocks/uspSection'
 
 export const schemaTypes = [
   pageType,
@@ -37,4 +38,5 @@ export const schemaTypes = [
   textRightImageGridLeftType,
   pageHeaderType,
   splitSectionType,
+  uspSectionType,
 ]
