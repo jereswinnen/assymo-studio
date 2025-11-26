@@ -11,6 +11,12 @@ export const productType = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: 'subtitle',
+      title: 'Ondertitel',
+      type: 'string',
+      description: 'Korte beschrijving voor de scroller',
+    }),
+    defineField({
       name: 'slug',
       type: 'slug',
       options: {source: 'name'},
@@ -54,6 +60,7 @@ export const productType = defineType({
         {type: 'pageHeader'},
         {type: 'splitSection'},
         {type: 'uspSection'},
+        {type: 'solutionsScroller'},
       ],
     }),
   ],

@@ -54,6 +54,7 @@ export const pageType = defineType({
         {type: 'pageHeader'},
         {type: 'splitSection'},
         {type: 'uspSection'},
+        {type: 'solutionsScroller'},
       ],
     }),
   ],
