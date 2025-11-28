@@ -33,6 +33,13 @@ export const projectType = defineType({
       ],
     }),
     defineField({
+      name: 'filters',
+      title: 'Filters',
+      type: 'array',
+      of: [{type: 'reference', to: [{type: 'filterOption'}]}],
+      description: 'Selecteer de filter opties die van toepassing zijn',
+    }),
+    defineField({
       name: 'body',
       title: 'Legacy Body Content',
       type: 'array',
@@ -54,7 +61,6 @@ export const projectType = defineType({
         {type: 'slideshow'},
         {type: 'slideshowLeftTextRight'},
         {type: 'slideshowRightTextLeft'},
-        {type: 'projectGrid'},
         {type: 'textLeftImageGridRight'},
         {type: 'textRightImageGridLeft'},
         {type: 'pageHeader'},

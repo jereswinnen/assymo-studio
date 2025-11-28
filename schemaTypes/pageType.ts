@@ -48,7 +48,6 @@ export const pageType = defineType({
         {type: 'slideshow'},
         {type: 'slideshowLeftTextRight'},
         {type: 'slideshowRightTextLeft'},
-        {type: 'projectGrid'},
         {type: 'textLeftImageGridRight'},
         {type: 'textRightImageGridLeft'},
         {type: 'pageHeader'},
