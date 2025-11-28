@@ -1,8 +1,8 @@
 import {defineField, defineType} from 'sanity'
 
-export const productType = defineType({
+export const projectType = defineType({
   name: 'solution',
-  title: 'Oplossingen',
+  title: 'Realisaties',
   type: 'document',
   fields: [
     defineField({
@@ -54,7 +54,7 @@ export const productType = defineType({
         {type: 'slideshow'},
         {type: 'slideshowLeftTextRight'},
         {type: 'slideshowRightTextLeft'},
-        {type: 'productGrid'},
+        {type: 'projectGrid'},
         {type: 'textLeftImageGridRight'},
         {type: 'textRightImageGridLeft'},
         {type: 'pageHeader'},

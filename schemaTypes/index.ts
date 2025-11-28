@@ -1,6 +1,6 @@
 import {pageType} from './pageType'
 import {navigationType} from './navType'
-import {productType} from './productType'
+import {projectType} from './projectType'
 import {siteParametersType} from './parametersType'
 
 import {textLeftImageRightType} from './blocks/textLeftImageRight'
@@ -12,7 +12,7 @@ import {contactFormType} from './blocks/contactForm'
 import {slideshowType} from './blocks/slideshow'
 import {slideshowLeftTextRightType} from './blocks/slideshowLeftTextRight'
 import {slideshowRightTextLeftType} from './blocks/slideshowRightTextLeft'
-import {productGridType} from './blocks/productGrid'
+import {projectGridType} from './blocks/projectGrid'
 import {textLeftImageGridRightType} from './blocks/textLeftImageGridRight'
 import {textRightImageGridLeftType} from './blocks/textRightImageGridLeft'
 import {pageHeaderType} from './blocks/pageHeader'
@@ -23,7 +23,7 @@ import {solutionsScrollerType} from './blocks/solutionsScroller'
 export const schemaTypes = [
   pageType,
   navigationType,
-  productType,
+  projectType,
   siteParametersType,
   textLeftImageRightType,
   textRightImageLeftType,
@@ -34,7 +34,7 @@ export const schemaTypes = [
   slideshowType,
   slideshowLeftTextRightType,
   slideshowRightTextLeftType,
-  productGridType,
+  projectGridType,
   textLeftImageGridRightType,
   textRightImageGridLeftType,
   pageHeaderType,

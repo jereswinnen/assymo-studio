@@ -1,7 +1,7 @@
 import {defineField, defineType} from 'sanity'
 
-export const productGridType = defineType({
-  name: 'productGrid',
+export const projectGridType = defineType({
+  name: 'projectGrid',
   title: 'Oplossingen',
   type: 'object',
   fields: [
@@ -12,7 +12,7 @@ export const productGridType = defineType({
       description: 'Titel voor de oplossingen sectie',
     }),
     defineField({
-      name: 'products',
+      name: 'projects',
       title: 'Oplossingen',
       type: 'array',
       of: [
@@ -21,19 +21,19 @@ export const productGridType = defineType({
           to: [{type: 'solution'}],
         },
       ],
-      validation: (rule) => rule.required().min(1).error('At least one product is required'),
+      validation: (rule) => rule.required().min(1).error('At least one project is required'),
       description: 'Selecteer de oplossingen die je wilt tonen in de sectie',
     }),
   ],
   preview: {
     select: {
       heading: 'heading',
-      products: 'products',
+      projects: 'projects',
     },
-    prepare({heading, products}) {
-      const productCount = Array.isArray(products) ? products.length : 0
+    prepare({heading, projects}) {
+      const projectCount = Array.isArray(projects) ? projects.length : 0
       const title = heading || 'Oplossingen'
-      const subtitle = `${productCount} oplossing${productCount !== 1 ? 'en' : ''}`
+      const subtitle = `${projectCount} oplossing${projectCount !== 1 ? 'en' : ''}`
 
       return {
         title,

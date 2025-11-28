@@ -24,7 +24,7 @@ The project uses a **page builder pattern** with reusable section blocks.
 
 **Document Types** (in `schemaTypes/`):
 - `pageType.ts` - Pages with title, slug, headerImage, and sections array
-- `productType.ts` - Solutions (type name: "solution") with same structure as pages
+- `projectType.ts` - Solutions (type name: "solution") with same structure as pages
 - `navType.ts` - Site navigation structure
 
 **Section Blocks** (in `schemaTypes/blocks/`):
@@ -32,7 +32,7 @@ Reusable object types that can be added to page/solution `sections` arrays:
 - Text/Image layouts: `textLeftImageRight`, `textRightImageLeft`, `textCentered`
 - Image grid variants: `textLeftImageGridRight`, `textRightImageGridLeft`
 - Slideshows: `slideshow`, `slideshowLeftTextRight`, `slideshowRightTextLeft`
-- Other: `productGrid`, `kaart` (map), `kalender` (calendar), `contactForm`
+- Other: `projectGrid`, `kaart` (map), `kalender` (calendar), `contactForm`
 
 Each block type has a `preview` configuration for Studio display.
 
@@ -62,7 +62,7 @@ All schemas are exported from `schemaTypes/index.ts` and registered in `sanity.c
 1. Create file in `schemaTypes/blocks/`
 2. Define as `type: 'object'` with fields and preview config
 3. Export from `schemaTypes/index.ts`
-4. Add to `sections` array in `pageType.ts` and `productType.ts`
+4. Add to `sections` array in `pageType.ts` and `projectType.ts`
 
 ## Legacy Content
 
