@@ -15,8 +15,15 @@ export const pageHeaderType = defineType({
     defineField({
       name: 'subtitle',
       title: 'Subtitle',
-      type: 'text',
-      rows: 3,
+      type: 'array',
+      of: [{type: 'block'}],
+    }),
+    defineField({
+      name: 'background',
+      title: 'Achtergrond',
+      type: 'boolean',
+      description: 'Toon een grijze achtergrond met de header afbeelding van de pagina',
+      initialValue: false,
     }),
     defineField({
       name: 'showButtons',
