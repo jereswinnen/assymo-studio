@@ -6,6 +6,13 @@ export const slideshowType = defineType({
   type: 'object',
   fields: [
     defineField({
+      name: 'background',
+      title: 'Achtergrond',
+      type: 'boolean',
+      description: 'Toon een grijze achtergrond met extra padding',
+      initialValue: false,
+    }),
+    defineField({
       name: 'images',
       title: 'Images',
       type: 'array',

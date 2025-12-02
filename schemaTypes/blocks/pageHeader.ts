@@ -22,7 +22,14 @@ export const pageHeaderType = defineType({
       name: 'background',
       title: 'Achtergrond',
       type: 'boolean',
-      description: 'Toon een grijze achtergrond met de header afbeelding van de pagina',
+      description: 'Toon een grijze achtergrond',
+      initialValue: false,
+    }),
+    defineField({
+      name: 'showImage',
+      title: 'Toon Afbeelding',
+      type: 'boolean',
+      description: 'Toon de header afbeelding van de pagina',
       initialValue: false,
     }),
     defineField({
