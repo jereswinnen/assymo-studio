@@ -5,17 +5,7 @@ import {siteParametersType} from './parametersType'
 import {filterCategoryType} from './filterCategoryType'
 import {filterOptionType} from './filterOptionType'
 
-import {textLeftImageRightType} from './blocks/textLeftImageRight'
-import {textRightImageLeftType} from './blocks/textRightImageLeft'
-import {textCenteredType} from './blocks/textCentered'
-import {kaartType} from './blocks/mapType'
-import {kalenderType} from './blocks/calendarType'
-import {contactFormType} from './blocks/contactForm'
 import {slideshowType} from './blocks/slideshow'
-import {slideshowLeftTextRightType} from './blocks/slideshowLeftTextRight'
-import {slideshowRightTextLeftType} from './blocks/slideshowRightTextLeft'
-import {textLeftImageGridRightType} from './blocks/textLeftImageGridRight'
-import {textRightImageGridLeftType} from './blocks/textRightImageGridLeft'
 import {pageHeaderType} from './blocks/pageHeader'
 import {splitSectionType} from './blocks/splitSection'
 import {uspSectionType} from './blocks/uspSection'
@@ -28,17 +18,7 @@ export const schemaTypes = [
   siteParametersType,
   filterCategoryType,
   filterOptionType,
-  textLeftImageRightType,
-  textRightImageLeftType,
-  textCenteredType,
-  kaartType,
-  kalenderType,
-  contactFormType,
   slideshowType,
-  slideshowLeftTextRightType,
-  slideshowRightTextLeftType,
-  textLeftImageGridRightType,
-  textRightImageGridLeftType,
   pageHeaderType,
   splitSectionType,
   uspSectionType,
