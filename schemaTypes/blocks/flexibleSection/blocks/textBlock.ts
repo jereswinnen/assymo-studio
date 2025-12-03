@@ -32,14 +32,22 @@ export const flexTextBlockType = defineType({
       of: [{type: 'block'}],
     }),
     defineField({
-      name: 'cta',
-      title: 'Actie Knop',
+      name: 'showButton',
+      title: 'Toon Knop',
+      type: 'boolean',
+      initialValue: false,
+    }),
+    defineField({
+      name: 'button',
+      title: 'Knop',
       type: 'object',
+      hidden: ({parent}) => !parent?.showButton,
       fields: [
         defineField({
           name: 'label',
           title: 'Label',
           type: 'string',
+          validation: (rule) => rule.required(),
         }),
         defineField({
           name: 'url',

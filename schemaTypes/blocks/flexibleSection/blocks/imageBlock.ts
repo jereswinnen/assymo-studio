@@ -20,35 +20,15 @@ export const flexImageBlockType = defineType({
         }),
       ],
     }),
-    defineField({
-      name: 'caption',
-      title: 'Onderschrift',
-      type: 'string',
-    }),
-    defineField({
-      name: 'aspectRatio',
-      title: 'Beeldverhouding',
-      type: 'string',
-      options: {
-        list: [
-          {title: 'Origineel', value: 'original'},
-          {title: '16:9', value: '16/9'},
-          {title: '4:3', value: '4/3'},
-          {title: '1:1 (Vierkant)', value: '1/1'},
-          {title: '3:4 (Staand)', value: '3/4'},
-        ],
-      },
-      initialValue: 'original',
-    }),
   ],
   preview: {
     select: {
-      title: 'caption',
       media: 'image',
+      alt: 'image.alt',
     },
-    prepare({title, media}) {
+    prepare({media, alt}) {
       return {
-        title: title || 'Afbeelding',
+        title: alt || 'Afbeelding',
         subtitle: 'Afbeelding Blok',
         media,
       }

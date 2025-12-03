@@ -6,18 +6,30 @@ export const flexFormBlockType = defineType({
   type: 'object',
   fields: [
     defineField({
-      name: 'placeholder',
-      title: 'Placeholder',
-      type: 'string',
+      name: 'enabled',
+      type: 'boolean',
       hidden: true,
-      initialValue: 'form',
+      initialValue: true,
+    }),
+    defineField({
+      name: 'title',
+      title: 'Titel',
+      type: 'string',
+    }),
+    defineField({
+      name: 'subtitle',
+      title: 'Ondertitel',
+      type: 'string',
     }),
   ],
   preview: {
-    prepare() {
+    select: {
+      title: 'title',
+    },
+    prepare({title}) {
       return {
-        title: 'Contact Formulier',
-        subtitle: 'Formulier',
+        title: title || 'Contact Formulier',
+        subtitle: 'Formulier Blok',
       }
     },
   },

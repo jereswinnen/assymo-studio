@@ -1,6 +1,13 @@
-import {defineField, defineType} from 'sanity'
+import {defineField, defineType, defineArrayMember} from 'sanity'
 import {layoutOptions} from './layouts'
-import {flexibleBlockTypeNames} from './blocks'
+
+// Inline block definitions for single-select fields
+const blockOptions = [
+  defineArrayMember({type: 'flexTextBlock'}),
+  defineArrayMember({type: 'flexImageBlock'}),
+  defineArrayMember({type: 'flexMapBlock'}),
+  defineArrayMember({type: 'flexFormBlock'}),
+]
 
 export const flexibleSectionType = defineType({
   name: 'flexibleSection',
@@ -27,50 +34,33 @@ export const flexibleSectionType = defineType({
     defineField({
       name: 'background',
       title: 'Achtergrond',
-      type: 'string',
-      options: {
-        list: [
-          {title: 'Geen', value: 'none'},
-          {title: 'Lichtgrijs', value: 'light'},
-          {title: 'Donker', value: 'dark'},
-        ],
-      },
-      initialValue: 'none',
+      type: 'boolean',
+      description: 'Toon een grijze achtergrond met extra padding',
+      initialValue: false,
     }),
     defineField({
-      name: 'verticalPadding',
-      title: 'Verticale Ruimte',
-      type: 'string',
-      options: {
-        list: [
-          {title: 'Geen', value: 'none'},
-          {title: 'Klein', value: 'sm'},
-          {title: 'Medium', value: 'md'},
-          {title: 'Groot', value: 'lg'},
-        ],
-      },
-      initialValue: 'md',
-    }),
-    defineField({
-      name: 'columnMain',
+      name: 'blockMain',
       title: 'Inhoud',
       type: 'array',
-      of: flexibleBlockTypeNames,
+      of: blockOptions,
       hidden: ({parent}) => parent?.layout !== '1-col',
+      validation: (rule) => rule.max(1),
     }),
     defineField({
-      name: 'columnLeft',
+      name: 'blockLeft',
       title: 'Linker Kolom',
       type: 'array',
-      of: flexibleBlockTypeNames,
+      of: blockOptions,
       hidden: ({parent}) => parent?.layout === '1-col',
+      validation: (rule) => rule.max(1),
     }),
     defineField({
-      name: 'columnRight',
+      name: 'blockRight',
       title: 'Rechter Kolom',
       type: 'array',
-      of: flexibleBlockTypeNames,
+      of: blockOptions,
       hidden: ({parent}) => parent?.layout === '1-col',
+      validation: (rule) => rule.max(1),
     }),
     defineField({
       name: 'verticalAlign',
