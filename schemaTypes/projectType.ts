@@ -57,6 +57,7 @@ export const projectType = defineType({
         {type: 'splitSection'},
         {type: 'uspSection'},
         {type: 'solutionsScroller'},
+        {type: 'flexibleSection'},
       ],
     }),
   ],

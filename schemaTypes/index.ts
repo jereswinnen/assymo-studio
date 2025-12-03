@@ -10,6 +10,8 @@ import {pageHeaderType} from './blocks/pageHeader'
 import {splitSectionType} from './blocks/splitSection'
 import {uspSectionType} from './blocks/uspSection'
 import {solutionsScrollerType} from './blocks/solutionsScroller'
+import {flexibleSectionType} from './blocks/flexibleSection'
+import {flexibleBlockTypes} from './blocks/flexibleSection/blocks'
 
 export const schemaTypes = [
   pageType,
@@ -23,4 +25,6 @@ export const schemaTypes = [
   splitSectionType,
   uspSectionType,
   solutionsScrollerType,
+  flexibleSectionType,
+  ...flexibleBlockTypes,
 ]
