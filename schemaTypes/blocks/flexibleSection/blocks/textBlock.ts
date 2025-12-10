@@ -50,9 +50,22 @@ export const flexTextBlockType = defineType({
           validation: (rule) => rule.required(),
         }),
         defineField({
+          name: 'action',
+          title: 'Actie',
+          type: 'string',
+          options: {
+            list: [
+              {title: 'Link', value: 'link'},
+              {title: 'Open Chatbot', value: 'openChatbot'},
+            ],
+          },
+          initialValue: 'link',
+        }),
+        defineField({
           name: 'url',
           title: 'URL',
           type: 'url',
+          hidden: ({parent}) => parent?.action === 'openChatbot',
           validation: (rule) =>
             rule.uri({
               allowRelative: true,
