@@ -1,10 +1,12 @@
 import {defineType, defineField} from 'sanity'
+import {orderRankField} from '@sanity/orderable-document-list'
 
 export const filterCategoryType = defineType({
   name: 'filterCategory',
   title: 'Filter Categorieën',
   type: 'document',
   fields: [
+    orderRankField({type: 'filterCategory', newItemPosition: 'after'}),
     defineField({
       name: 'name',
       title: 'Naam',
@@ -18,13 +20,6 @@ export const filterCategoryType = defineType({
       options: {source: 'name'},
       validation: (rule) => rule.required(),
       description: 'URL-vriendelijke naam (bijv. "type", "stijl")',
-    }),
-    defineField({
-      name: 'order',
-      title: 'Volgorde',
-      type: 'number',
-      initialValue: 0,
-      description: 'Lagere nummers worden eerst getoond',
     }),
   ],
   preview: {

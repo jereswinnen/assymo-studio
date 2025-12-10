@@ -24,8 +24,32 @@ export default defineConfig({
               context,
             }),
             S.divider(),
+            S.listItem()
+              .title('Filters')
+              .child(
+                S.list()
+                  .title('Filters')
+                  .items([
+                    orderableDocumentListDeskItem({
+                      type: 'filterCategory',
+                      title: 'Categorieën',
+                      S,
+                      context,
+                    }),
+                    orderableDocumentListDeskItem({
+                      type: 'filterOption',
+                      title: 'Opties',
+                      S,
+                      context,
+                    }),
+                  ])
+              ),
+            S.divider(),
             ...S.documentTypeListItems().filter(
-              (item) => item.getId() !== 'solution'
+              (item) =>
+                !['solution', 'filterCategory', 'filterOption'].includes(
+                  item.getId() ?? ''
+                )
             ),
           ]),
     }),
