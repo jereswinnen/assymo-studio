@@ -36,12 +36,26 @@ export default defineConfig({
                       S,
                       context,
                     }),
-                    orderableDocumentListDeskItem({
-                      type: 'filterOption',
-                      title: 'Opties',
-                      S,
-                      context,
-                    }),
+                    S.listItem()
+                      .title('Opties per categorie')
+                      .child(
+                        S.documentTypeList('filterCategory')
+                          .title('Kies een categorie')
+                          .defaultOrdering([{field: 'orderRank', direction: 'asc'}])
+                          .child((categoryId) => {
+                            const item = orderableDocumentListDeskItem({
+                              type: 'filterOption',
+                              title: 'Opties',
+                              filter: 'category._ref == $categoryId',
+                              params: {categoryId},
+                              id: `filterOption-${categoryId}`,
+                              S,
+                              context,
+                            })
+                            // The function returns a serialized ListItem, extract its child
+                            return (item as any).child
+                          })
+                      ),
                   ])
               ),
             S.divider(),
